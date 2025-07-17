@@ -1,12 +1,51 @@
-# Build and Deploy a React Admin Dashboard App With Theming, Tables, Charts, Calendar, Kanban and More
-![Shoppy](https://i.ibb.co/W6g39w3/image.png)
+# 📊 Shoppy Dashboard
 
-### [🌟 Become a top 1% Next.js developer in only one course](https://jsmastery.pro/next15)
-### [🚀 Land your dream programming job in 6 months](https://jsmastery.pro/masterclass)
+A modern, responsive **Admin Dashboard** built with **React**, **Tailwind CSS**, and **Syncfusion UI components**. This project provides a sleek and interactive UI for managing data, charts, analytics, and more — perfect for admin panels, dashboards, and business interfaces.
 
-## Introduction
-This is a code repository for the corresponding video tutorial.
+---
 
-If you want to get a finished, highly customizable Material UI version of a similar dashboard, check out [Flexy React Material Dashboard](https://www.wrappixel.com/templates/flexy-react-material-dashboard-admin/?ref=257&campaign=Flexy).
+## 🚀 Features
 
-## Launch your development career with project-based coaching - https://www.jsmastery.pro
+- 💅 **Beautiful UI** with Syncfusion components
+- 📱 **Responsive design** for all screen sizes
+- 📊 **Interactive charts and analytics**
+- 🧭 **Sidebar navigation**
+- 🎨 **Dark/Light theme toggle**
+- 🌐 **Routing with React Router**
+- 💡 **Modular and clean code structure**
+
+---
+
+## 🛠️ Tech Stack
+
+- ⚛️ React
+- 🎨 Tailwind CSS
+- 🧩 Syncfusion React Components
+- 🔁 React Router DOM
+- ☁️ Vite (for lightning-fast dev builds)
+
+---
+
+## 📸 Screenshots
+
+![Dashboard Preview](https://user-images.githubusercontent.com/your-image-preview.png)
+
+> *(Replace the above with your actual screenshots or remove this section)*
+
+---
+
+## 📂 Folder Structure
+
+```bash
+Shoppy_dashboard/
+├── public/
+├── src/
+│   ├── components/       # UI Components
+│   ├── pages/            # Main pages
+│   ├── data/             # Chart & table data
+│   ├── context/          # App context and theme
+│   ├── App.js            # Main app entry
+│   └── index.js          # React DOM render
+├── package.json
+├── tailwind.config.js
+└── vite.config.js
