@@ -61,6 +61,7 @@ export const kanbanGrid = [
     keyField: 'Close',
     allowToggle: true },
 ];
+// eslint-disable-next-line no-unused-vars
 const gridEmployeeProfile = (props) => (
   <div className="flex items-center gap-2">
     <img
@@ -72,6 +73,7 @@ const gridEmployeeProfile = (props) => (
   </div>
 );
 
+// eslint-disable-next-line no-unused-vars
 const gridEmployeeCountry = (props) => (
   <div className="flex items-center justify-center gap-2">
     <GrLocation />
@@ -120,6 +122,7 @@ export const EditorData = () => (
     </h3>
   </div>
 );
+// eslint-disable-next-line no-unused-vars
 const customerGridImage = (props) => (
   <div className="image flex gap-4">
     <img
@@ -134,6 +137,7 @@ const customerGridImage = (props) => (
   </div>
 );
 
+// eslint-disable-next-line no-unused-vars
 const customerGridStatus = (props) => (
   <div className="flex gap-2 justify-center items-center text-gray-700 capitalize">
     <p style={{ background: props.StatusBg }} className="rounded-full h-3 w-3" />
@@ -170,6 +174,7 @@ export const barPrimaryYAxis = {
   lineStyle: { width: 0 },
   labelStyle: { color: 'transparent' },
 };
+// eslint-disable-next-line no-unused-vars
 const areaChartData = [
   [
     { x: new Date(2002, 0, 1), y: 2.2 },
