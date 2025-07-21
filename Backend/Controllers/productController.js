@@ -1,11 +1,23 @@
+// controllers/productController.js
 const Product = require('../models/productModel');
 
-exports.getAllProducts = async (req, res) => {
-  const products = await Product.find();
-  res.json(products);
+// @desc    Get all products
+exports.getProducts = async (req, res, next) => {
+  try {
+    const products = await Product.find();
+    res.status(200).json(products);
+  } catch (err) {
+    next(err);
+  }
 };
 
-exports.createProduct = async (req, res) => {
-  const newProduct = await Product.create(req.body);
-  res.status(201).json(newProduct);
+// @desc    Add a product
+exports.createProduct = async (req, res, next) => {
+  try {
+    const { name, price, description } = req.body;
+    const product = await Product.create({ name, price, description });
+    res.status(201).json(product);
+  } catch (err) {
+    next(err);
+  }
 };
