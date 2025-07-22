@@ -20,6 +20,7 @@ const app = express();
 app.use(cors());
 app.use(express.json()); // To parse JSON request bodies
 
+
 // Routes
 app.use('/api/products', productRoutes);
 app.use('/api/auth', authRoutes);
