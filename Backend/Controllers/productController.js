@@ -1,23 +1,18 @@
-// controllers/productController.js
-const Product = require('../models/product');
-
-// @desc    Get all products
-exports.getProducts = async (req, res, next) => {
-  try {
-    const products = await Product.find();
-    res.status(200).json(products);
-  } catch (err) {
-    next(err);
-  }
+const Product = require('../models/Product');
+exports.getProducts = async (req, res) => {
+  const products = await Product.find();
+  res.json(products);
 };
-
-// @desc    Add a product
-exports.createProduct = async (req, res, next) => {
-  try {
-    const { name, price, description } = req.body;
-    const product = await Product.create({ name, price, description });
-    res.status(201).json(product);
-  } catch (err) {
-    next(err);
-  }
+exports.createProduct = async (req, res) => {
+  const product = new Product(req.body);
+  await product.save();
+  res.json(product);
+};
+exports.updateProduct = async (req, res) => {
+  const product = await Product.findByIdAndUpdate(req.params.id, req.body, { new: true });
+  res.json(product);
+};
+exports.deleteProduct = async (req, res) => {
+  await Product.findByIdAndDelete(req.params.id);
+  res.json({ message: 'Product deleted' });
 };
