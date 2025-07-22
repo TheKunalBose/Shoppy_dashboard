@@ -3,6 +3,8 @@ const app = express();
 
 const productRoutes = require('./routes/productRoutes');
 const errorHandler = require('./middleware/errorHandler');
+const cors = require('cors');
+app.use(cors());
 
 // Body parser middleware
 app.use(express.json());
