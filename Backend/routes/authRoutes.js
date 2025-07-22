@@ -4,7 +4,7 @@ import {
   loginUser,
   getCurrentUser,
   logoutUser,
-} from '../controllers/authController.js';
+} from '../Controllers/authController.js';
 import { protect } from '../middleware/authMiddleware.js';
 
 const router = express.Router();
@@ -26,3 +26,6 @@ router.get('/me', protect, getCurrentUser);
 router.post('/logout', logoutUser);
 
 export default router;
+
+
+
