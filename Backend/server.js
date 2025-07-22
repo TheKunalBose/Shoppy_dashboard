@@ -1,10 +1,11 @@
-import express from 'express';
-import dotenv from 'dotenv';
-import cors from 'cors';
-import connectDB from './config/db.js';
-import productRoutes from './routes/productRoutes.js';
-import authRoutes from './routes/authRoutes.js';
-import { notFound, errorHandler } from './middleware/errorMiddleware.js';
+// server.js
+const express = require('express');
+const dotenv = require('dotenv');
+const cors = require('cors');
+const connectDB = require('./config/db');
+const productRoutes = require('./routes/productRoutes');
+const authRoutes = require('./routes/authRoutes');
+// const { notFound, errorHandler } = require('./middleware/errorMiddleware');
 
 // Load env vars
 dotenv.config();
@@ -29,11 +30,12 @@ app.get('/', (req, res) => {
 });
 
 // Error handling middleware
-app.use(notFound);
-app.use(errorHandler);
+// Uncomment when middleware is available
+// app.use(notFound);
+// app.use(errorHandler);
 
 // Start server
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () =>
-  console.log(`Server running on http://localhost:${PORT}`),
+  console.log(`Server running on http://localhost:${PORT}`)
 );

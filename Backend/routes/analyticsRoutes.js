@@ -1,10 +1,11 @@
-import express from 'express';
-import {
+// routes/analyticsRoutes.js
+const express = require('express');
+const {
   getSummary,
   getRevenueStats,
   getExpenseStats,
   getPieChartData,
-} from '../controllers/analyticsController.js';
+} = require('../controllers/analyticsController');
 
 const router = express.Router();
 
@@ -13,4 +14,4 @@ router.get('/revenue', getRevenueStats);      // For line chart
 router.get('/expenses', getExpenseStats);     // For sparkline
 router.get('/pie', getPieChartData);          // Pie chart breakdown
 
-export default router;
+module.exports = router;

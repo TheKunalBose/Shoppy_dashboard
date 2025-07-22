@@ -1,11 +1,12 @@
-import express from 'express';
-import {
+// routes/orderRoutes.js
+const express = require('express');
+const {
   getOrders,
   getOrderById,
   createOrder,
   updateOrder,
   deleteOrder,
-} from '../controllers/orderController.js';
+} = require('../controllers/orderController');
 
 const router = express.Router();
 
@@ -18,4 +19,4 @@ router.route('/:id')
   .put(updateOrder)
   .delete(deleteOrder);
 
-export default router;
+module.exports = router;

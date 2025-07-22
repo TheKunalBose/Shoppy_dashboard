@@ -1,31 +1,23 @@
-import express from 'express';
-import {
+const express = require('express');
+const router = express.Router();
+const {
   registerUser,
   loginUser,
   getCurrentUser,
   logoutUser,
-} from '../Controllers/authController.js';
-import { protect } from '../middleware/authMiddleware.js';
-
-const router = express.Router();
+} = require('../Controllers/authController');
+const { protect } = require('../middleware/authMiddleware');
 
 // @route   POST /api/auth/register
-// @desc    Register new user
 router.post('/register', registerUser);
 
 // @route   POST /api/auth/login
-// @desc    Login user and get token
 router.post('/login', loginUser);
 
 // @route   GET /api/auth/me
-// @desc    Get current logged-in user info
-// @access  Private
 router.get('/me', protect, getCurrentUser);
 
-// (Optional) Logout route (only if token is stored server-side, usually in cookies)
+// @route   POST /api/auth/logout (optional)
 router.post('/logout', logoutUser);
 
-export default router;
-
-
-
+module.exports = router;

@@ -1,8 +1,9 @@
-import jwt from 'jsonwebtoken';
-import User from '../models/userModel.js';
-import asyncHandler from 'express-async-handler';
+// middleware/authMiddleware.js
+const jwt = require('jsonwebtoken');
+const User = require('../models/User');
+const asyncHandler = require('express-async-handler');
 
-export const protect = asyncHandler(async (req, res, next) => {
+const protect = asyncHandler(async (req, res, next) => {
   let token;
 
   if (
@@ -15,7 +16,7 @@ export const protect = asyncHandler(async (req, res, next) => {
 
       req.user = await User.findById(decoded.id).select('-password');
 
-      next();
+      return next();
     } catch (error) {
       res.status(401);
       throw new Error('Not authorized, token failed');
@@ -27,3 +28,5 @@ export const protect = asyncHandler(async (req, res, next) => {
     throw new Error('Not authorized, no token');
   }
 });
+
+module.exports = { protect };
